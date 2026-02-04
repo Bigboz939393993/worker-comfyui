@@ -79,7 +79,8 @@ RUN chmod +x /start.sh
 
 # Add script to install custom nodes
 COPY scripts/comfy-node-install.sh /usr/local/bin/comfy-node-install
-RUN chmod +x /usr/local/bin/comfy-node-install
+RUN chmod +x /usr/local/bin/comfy-node-install \
+    && /usr/local/bin/comfy-node-install
 
 # Prevent pip from asking for confirmation during uninstall steps in custom nodes
 ENV PIP_NO_INPUT=1
